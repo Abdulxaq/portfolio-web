@@ -7,8 +7,9 @@
     background: 
     linear-gradient(
         to right,
-        rgba($primary-color, 0.3),
+        rgba($primary-color, 0.5),
         rgba($primary-color, 0.1),
+        rgba($primary-color, 0.5),
     ),
     url(../img/20210422_173814.jpg) center top;
     background-position: center;
@@ -17,7 +18,7 @@
     &__name{
         font-size: 5rem;
         padding-bottom: 1rem;
-        margin-top: 1rem;
+        margin-bottom: 1rem;
         border-bottom: 2px solid set-text-color($primary-color);
         &--last{
             color: $secondary-color;

@@ -3,8 +3,9 @@ const menuBtn = document.querySelector(".menu-btn");
 const hamburger = document.querySelector(".menu-btn__burger");
 const nav = document.querySelector(".nav");
 const menuNav = document.querySelector(".menu-nav");
-const navItems = document.querySelectorAll("menu-nav__item");
-const preloader = document.querySelector(".demo-content");
+const navItems = document.querySelectorAll(".menu-nav__item");
+const elements = document.querySelectorAll('.social-icons .fab');
+
 
 let showMenu = false;
 
@@ -32,19 +33,28 @@ function toggleMenu() {
 
 window.onload = function () {
     setTimeout(() => {
-        preloader.classList.add("open");
-    }, 3000);
-    setTimeout(() => {
-        preloader.classList.add("close");
-    }, 3500);
+        anime({
+            targets: elements,
+            translateX: 200
+          });          
+    }, 1000);
+
 }
 
-anime({
-    targets: ['.svg-attributes-demo polygon', 'feTurbulence', 'feDisplacementMap'],
-    points: '64 128 8.574 96 8.574 32 64 0 119.426 32 119.426 96',
-    baseFrequency: 0,
-    scale: 1,
-    loop: true,
-    direction: 'alternate',
-    easing: 'easeInOutExpo'
-});
+
+setTimeout(() => {
+    anime({
+        targets: elements,
+        translateY: -60,
+        delay: anime.stagger(150), // increase delay by 100ms for each elements.
+        color: "#ff652f",
+        });
+}, 1500);
+setTimeout(() => {
+    anime({
+        targets: elements,
+        translateY: 0,
+        delay: anime.stagger(100), // increase delay by 100ms for each elements.
+        color: "#fff",
+      });
+}, 2300);
